@@ -3,15 +3,13 @@
 [Ordered Data Structures - Coursera](https://www.coursera.org/learn/cs-fundamentals-2)
 
 
-
 ---
-TODO: Add notes for weekly material
 
 - Week 1
-  - xxx
+  - Orientation and Linear Structures
 - Week 2
-  - xxx
+  - xxxIntroduction to Tree Structures
 - Week 3
-  - xxx
+  - Advanced Tree Structures
 - Week 4 
-  - xxx
+  - Heap Structures
