@@ -43,7 +43,7 @@ Link: [Github repo for source files used in all 3 courses in the Accelerated CS 
 - B-Trees
 - B-Tree Insert
 - B-Tree Search
-- Challenge: Create function to calculate height of a binary tree
+- Challenge: Create function to calculate height of each node in a binary tree
 - Project: Generic Tree and Tree Traversal
 
 ## Week 4: Heap Structures
