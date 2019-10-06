@@ -94,35 +94,60 @@ void LinkedList<T>::insertOrdered(const T& newData) {
   // Don't forget to update the list size.
   
   Node * newNode = new Node(newData);
-
-  // Traverse the ordered list to find a place to insert the new node
-  Node * currNode = getHeadPtr();
-  Node * aftNode = currNode->next;
-  bool inserted = false;
+  // std::cout << "** Inserting: " << newNode->data << std::endl;
   
-  while (!inserted) {
-    // Insert the node if at end (null pointer) or if the data is larger than new data
-    if (aftNode->data >= newNode->data) {
-      std::cout << "inserting: " << newNode->data << std::endl;
+  if(!isSorted() ) {
+    insertionSort();
+  }
   
-      size_ += 1;
-      aftNode->prev = newNode;
-      newNode->next = aftNode;
-      newNode->prev = currNode;
-      currNode->next = newNode;
-      inserted = true;
-      
-      std::cout << "currNode: " << currNode->data << std::endl;
-      std::cout << "newNode: " << newNode->data << std::endl; 
-      std::cout << "aftNode: " << aftNode->data << std::endl;  
+  if (empty() ) {
+    pushFront(newNode->data);
+    // std::cout << "**** Inserted at head: " << newNode->data << std::endl;
+  }
+  else {
+    // Check the last node and insert there if newNode > tail
+    if (newNode->data >= back() ) {
+      pushBack(newNode->data);
+      // std::cout << "**** Inserted at tail: " << newNode->data << std::endl;
+    }
+    // Check the first node and insert there if newNode < head
+    else if (newNode->data <= front() ) {
+      pushFront(newNode->data);
+      // std::cout << "**** Inserted at head: " << newNode->data << std::endl;
     }
     else {
-      currNode = currNode->next;
-      aftNode = aftNode->next;
+      // Traverse the ordered list to find a place to insert the new node
+      Node * currNode = getHeadPtr();
+      // std::cout << "** Traversing from head: " << currNode->data << std::endl;
+      bool inserted = false;
+      
+      while (!inserted) {
+        // Insert the node before currNode if newNode <= currNode or it's a nullptr (at end of list)
+        if (newNode->data <= currNode->data) {
+          // std::cout << "**** Inserting before " << currNode->data;
+          
+          // update the prev and next links on the newNode
+          newNode->prev = currNode->prev;
+          newNode->next = currNode;
+          
+          // update the prev link on the tail side
+          currNode->prev = newNode;
+          
+          // update the next link on the head side
+          currNode = newNode->prev;
+          currNode->next = newNode;
+    
+          size_++;
+          inserted = true;
+          
+          // std::cout << " and after " << currNode->data << std::endl;
+        }
+          // move to next node
+          currNode = currNode->next;
+      }
     }
   }
   // Check value 
- 
 }
 
 /********************************************************************
@@ -210,6 +235,45 @@ LinkedList<T> LinkedList<T>::merge(const LinkedList<T>& other) const {
   // item in the merged list?
   // Think of what needs to be placed in the merged list first. Then,
   // think about what should come after that. (And so on.)
+  
+  // first: sort the two lists
+  if (!left.isSorted() ) {
+    // std::cout << "** Sorting left list **" << std::endl;
+    left.mergeSort();
+  }
+  if (!right.isSorted() ) {
+    // std::cout << "** Sorting right list **" << std::endl;
+    right.mergeSort();
+  }
+  
+  // Iterate through left and right, popping off the lower one to the new merge linked list
+  while( ( left.size() + right.size() ) > 0) {
+    // std::cout << "*** Merging with size = " << (left.size() + right.size() ) << std::endl;
+    
+    if (left.empty() ) { 
+      // std::cout << "* Left is empty.  Adding from right: " << right.front() << std::endl;
+      merged.pushBack(right.front() ); 
+      right.popFront();
+    }
+    else if (right.empty() ) { 
+      // std::cout << "* Right is empty.  Adding from left: " << left.front() << std::endl;
+      merged.pushBack(left.front() ); 
+      left.popFront();
+    }
+    else {
+      if (left.front() <= right.front() ) {
+        // std::cout << "* Left smaller than right, adding from left: " << left.front() << std::endl;
+        merged.pushBack(left.front() );
+        left.popFront();
+      }
+      else {
+        // std::cout << "* Right smaller than left, adding from right: " << right.front() << std::endl;
+        merged.pushBack(right.front() );
+        right.popFront();
+      }
+    }
+      
+  }
 
   return merged;
 }
