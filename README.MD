@@ -1,8 +1,19 @@
 # Ordered Data Structures
 
-**I'm using this repo to track my progress through the course**
+## Description
 
-Link: [Ordered Data Structures - Coursera](https://www.coursera.org/learn/cs-fundamentals-2)
+Course 2 of 3 in the Accelerated Computer Science Fundamentals Certification on Coursera.  
+
+I'm using this repo to track my progress through the course.  
+
+## [Accelerated CS Fundamentals Certification](https://www.coursera.org/specializations/cs-fundamentals) - University of Illinois Urbana Champlain via Coursera
+
+- Course 1: [Object-Oriented Data Structures in C++](https://www.coursera.org/learn/cs-fundamentals-1)
+  - Link to my github repo for this course [here](https://github.com/BrianLeip/Object-Oriented-Data-Structures-Cpp)
+- **Course 2 (this one): [Ordered Data Structures](https://www.coursera.org/learn/cs-fundamentals-2)**
+  - Link to my github repo for this course [here](https://github.com/BrianLeip/ordered-data-structures)
+- Course 3: [Unordered Data Structures](https://www.coursera.org/learn/cs-fundamentals-3)
+  - Link to my github repo for this course *UPCOMING*
 
 Link: [Github repo for source files used in all 3 courses in the Accelerated CS Fundamentals Certification](https://github.com/wadefagen/coursera)
 
@@ -23,7 +34,7 @@ Link: [Github repo for source files used in all 3 courses in the Accelerated CS 
 - Tree Traversals
 - Binary Search Trees (BST)
 - BST Analysis
-- Challenge - Count nodes in a BST without using recursion or a stack
+- Challenge: Count nodes in a BST without using recursion or a stack
 
 ## Week 3: Advanced Tree Structures
 
@@ -32,7 +43,9 @@ Link: [Github repo for source files used in all 3 courses in the Accelerated CS 
 - B-Trees
 - B-Tree Insert
 - B-Tree Search
+- Challenge: TBD
+- Project: Generic Tree and Tree Traversal
 
 ## Week 4: Heap Structures
 
-- x
+- UPCOMING
