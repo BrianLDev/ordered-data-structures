@@ -34,26 +34,26 @@ int count(Node *n) {
   
   while (curr != nullptr) {
   
-        if (curr->left == nullptr) { 
-            cnt++; 
-            curr = curr->right; 
-        } 
-        else { 
-            pre = curr->left; 
-            while (pre->right != nullptr && pre->right != curr) 
-                pre = pre->right; 
-  
-            if (pre->right == nullptr) { 
-                pre->right = curr; 
-                curr = curr->left; 
-            } 
-            else { 
-                pre->right = nullptr; 
-                cnt++; 
-                curr = curr->right; 
-            }
-        }
+    if (curr->left == nullptr) { 
+      cnt++; 
+      curr = curr->right; 
+    } 
+    else { 
+      pre = curr->left; 
+      while (pre->right != nullptr && pre->right != curr) 
+          pre = pre->right; 
+
+      if (pre->right == nullptr) { 
+          pre->right = curr; 
+          curr = curr->left; 
+      } 
+      else { 
+          pre->right = nullptr; 
+          cnt++; 
+          curr = curr->right; 
+      }
     }
+  }
 
   return cnt;
 }
