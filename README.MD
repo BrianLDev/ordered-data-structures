@@ -44,8 +44,13 @@ Link: [Github repo for source files used in all 3 courses in the Accelerated CS 
 - B-Tree Insert
 - B-Tree Search
 - Challenge: Create function to calculate height of each node in a binary tree
-- Project: Generic Tree and Tree Traversal
+- Project: Generic Tree Order Level Traversal
 
 ## Week 4: Heap Structures
 
-- UPCOMING
+- Heap Intro
+- Heap Insert
+- Heap RemoveMIN
+- Heap BuildHeap
+- Heap Runtime Analysis
+- Challenge: Create function to create a min heap with downHeap swapping
