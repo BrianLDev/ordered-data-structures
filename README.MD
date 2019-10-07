@@ -54,3 +54,7 @@ Link: [Github repo for source files used in all 3 courses in the Accelerated CS 
 - Heap BuildHeap
 - Heap Runtime Analysis
 - Challenge: Create function to create a min heap with downHeap swapping
+
+---
+
+# [Certificate of Completion - 10/6/2019](https://www.coursera.org/account/accomplishments/certificate/JAXQ3HTWZJEA)
